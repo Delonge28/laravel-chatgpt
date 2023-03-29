@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'base_url' => env('CHATGPT_BASE_URL', 'https://api.openai.com/v1/engines/davinci-codex/completions'),
+    'base_url' => env('CHATGPT_BASE_URL', 'https://api.openai.com/v1/'),
 
     /*
     |--------------------------------------------------------------------------

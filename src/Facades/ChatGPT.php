@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static array listEngines()
  * @method static array getEngine(string $engine_id)
+ * @method static array sendMessage(string $prompt = '', array $options = [])
  *
  * @see \Delonge28\LaravelChatGPT\ChatGPTClient
  */

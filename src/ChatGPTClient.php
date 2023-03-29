@@ -9,7 +9,7 @@ class ChatGPTClient
 {
     protected $apiKey;
     protected $client;
-    protected $baseURL = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+    protected $baseURL = 'https://api.openai.com/v1/';
 
     public function __construct(string $apiKey, string $baseURL = null)
     {
@@ -24,10 +24,10 @@ class ChatGPTClient
         ]);
     }
 
-    public function sendMessage(string $message, array $options = []): array
+    public function sendMessage(string $prompt, array $options = []): array
     {
         $payload = array_merge([
-            'prompt' => $message,
+            'prompt' => $prompt,
             'max_tokens' => 100,
             'n' => 1,
             'stop' => null,
@@ -47,11 +47,14 @@ class ChatGPTClient
         }
     }
 
-    public function listEngines()
+    public function listEngines(): array
     {
         try {
-            $response = $this->client->get('engines');
-            return json_decode($response->getBody(), true);
+            $response = $this->client->get('models');
+
+            $responseData = json_decode((string)$response->getBody(), true);
+
+            return $responseData['data'];
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
         }
@@ -60,10 +63,11 @@ class ChatGPTClient
     public function getEngine(string $engine_id)
     {
         try {
-            $response = $this->client->get("engines/{$engine_id}");
+            $response = $this->client->get("models/{$engine_id}");
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
         }
     }
+
 }
