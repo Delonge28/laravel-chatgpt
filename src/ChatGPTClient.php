@@ -9,7 +9,7 @@ class ChatGPTClient
 {
     protected $apiKey;
     protected $client;
-    protected $baseURL = 'https://api.openai.com/v1/';
+    protected $baseURL = 'https://api.openai.com/v1';
 
     public function __construct(string $apiKey, string $baseURL = null)
     {
@@ -41,11 +41,7 @@ class ChatGPTClient
 
             $responseData = json_decode((string)$response->getBody(), true);
 
-            if (isset($responseData['choices'][0]['text'])) {
-                return $responseData['choices'][0]['text'];
-            } else {
-                return ['error' => 'Response data does not contain expected format.'];
-            }
+
 
             return $responseData?? '';
         } catch (GuzzleException $exception) {
