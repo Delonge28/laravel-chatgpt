@@ -35,7 +35,7 @@ class ChatGPTClient
         ], $options);
 
         try {
-            $response = $this->client->post('', [
+            $response = $this->client->post('/chat/completions/', [
                 'json' => $payload,
             ]);
 
