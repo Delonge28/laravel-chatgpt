@@ -39,13 +39,10 @@ class ChatGPTClient
                 'json' => $payload,
             ]);
 
-            $responseData = json_decode((string)$response->getBody(), true);
-            if (isset($responseData['choices'][0]['text'])) {
-                return $responseData['choices'][0]['text'];
-            } else {
-                return ['error' => 'Response data does not contain expected format.'];
-            }
 
+            $responseData = json_decode((string) $response->getBody(), true);
+
+            return $responseData['choices'][0]['text'] ?? '';
 
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
