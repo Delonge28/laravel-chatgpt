@@ -53,7 +53,7 @@ class ChatGPTClient
     {
         try {
             $response = $this->client->get('/models');
-
+            dd((string) $response->getBody());
             $responseData = json_decode((string)$response->getBody(), true);
 
             return $responseData;
