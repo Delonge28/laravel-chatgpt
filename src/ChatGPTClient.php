@@ -41,7 +41,8 @@ class ChatGPTClient
 
             $responseData = json_decode((string)$response->getBody(), true);
 
-            return $responseData['choices'][0]['text'] ?? '';
+
+            return $responseData ?? '';
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
         }
