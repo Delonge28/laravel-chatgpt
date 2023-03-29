@@ -7,6 +7,9 @@ Laravel ChatGPT is a Laravel package that simplifies the integration with OpenAI
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
+- [Rate Limiting](#rate-limiting)
+- [Additional ChatGPT API Features](#additional-chatgpt-api-features)
+  - [List Engines](#list-engines)
 - [Testing](#testing)
 - [License](#license)
 
