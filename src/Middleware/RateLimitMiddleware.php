@@ -7,7 +7,7 @@ use Illuminate\Routing\Middleware\ThrottleRequests;
 
 class RateLimitMiddleware extends ThrottleRequests
 {
-    public function handle($request, Closure $next, $maxAttempts = 60, $decayMinutes = 1, $prefix = '')
+    public function handle($request, Closure $next, $maxAttempts = 60, $decayMinutes = 1, $prefix = ''): \Symfony\Component\HttpFoundation\Response
     {
         if (config('laravel-chatgpt.rate_limiting.enabled')) {
             $maxAttempts = config('laravel-chatgpt.rate_limiting.requests');
