@@ -41,8 +41,13 @@ class ChatGPTClient
 
             $responseData = json_decode((string)$response->getBody(), true);
 
+            if (isset($responseData['choices'][0]['text'])) {
+                return $responseData['choices'][0]['text'];
+            } else {
+                return ['error' => 'Response data does not contain expected format.'];
+            }
 
-            return $response;
+            return $responseData?? '';
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
         }
@@ -51,7 +56,7 @@ class ChatGPTClient
     public function listEngines(): array
     {
         try {
-            $response = $this->client->get('models');
+            $response = $this->client->get('/models');
 
             $responseData = json_decode((string)$response->getBody(), true);
 
@@ -64,7 +69,7 @@ class ChatGPTClient
     public function getEngine(string $engine_id)
     {
         try {
-            $response = $this->client->get("models/{$engine_id}");
+            $response = $this->client->get("/models/{$engine_id}");
             return json_decode($response->getBody(), true);
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
