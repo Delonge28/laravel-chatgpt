@@ -42,7 +42,7 @@ class ChatGPTClient
             $responseData = json_decode((string)$response->getBody(), true);
 
 
-            return $responseData ?? '';
+            return $response;
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
         }
