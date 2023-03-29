@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'base_url' => env('CHATGPT_BASE_URL', 'https://api.openai.com/v1/'),
+    'base_url' => env('CHATGPT_BASE_URL', 'https://api.openai.com/v1'),
 
     /*
     |--------------------------------------------------------------------------
