@@ -1,6 +1,6 @@
 <?php
 
-namespace Delonge\LaravelChatGPT;
+namespace Delonge28\LaravelChatGPT;
 
 use Illuminate\Support\ServiceProvider;
 

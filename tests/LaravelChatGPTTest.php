@@ -1,15 +1,15 @@
 <?php
 
-namespace Delonge\LaravelChatGPT\Tests;
+namespace Delonge28\LaravelChatGPT\Tests;
 
-use Delonge\LaravelChatGPT\ChatGPTClient;
+use Delonge28\LaravelChatGPT\ChatGPTClient;
 use Orchestra\Testbench\TestCase;
 
 class LaravelChatGPTTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [\Delonge\LaravelChatGPT\ChatGPTServiceProvider::class];
+        return [\Delonge28\LaravelChatGPT\ChatGPTServiceProvider::class];
     }
 
     protected function getEnvironmentSetUp($app)

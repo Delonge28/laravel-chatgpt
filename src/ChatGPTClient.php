@@ -1,6 +1,6 @@
 <?php
 
-namespace Delonge\LaravelChatGPT;
+namespace Delonge28\LaravelChatGPT;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

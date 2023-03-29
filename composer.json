@@ -1,5 +1,5 @@
 {
-  "name": "delonge/laravel-chatgpt",
+  "name": "delonge28/laravel-chatgpt",
   "description": "A Laravel package for easy integration with OpenAI's ChatGPT API.",
   "keywords": ["laravel", "chatgpt", "openai", "gpt", "api"],
   "type": "library",
@@ -23,21 +23,21 @@
 
   "autoload": {
     "psr-4": {
-      "Delonge\\LaravelChatGPT\\": "src/"
+      "Delonge28\\LaravelChatGPT\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Delonge\\LaravelChatGPT\\Tests\\": "tests/"
+      "Delonge28\\LaravelChatGPT\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Delonge\\LaravelChatGPT\\ChatGPTServiceProvider"
+        "Delonge28\\LaravelChatGPT\\ChatGPTServiceProvider"
       ],
       "aliases": {
-        "ChatGPT": "Delonge\\LaravelChatGPT\\Facades\\ChatGPT"
+        "ChatGPT": "Delonge28\\LaravelChatGPT\\Facades\\ChatGPT"
       }
     }
   },
