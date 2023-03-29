@@ -1,0 +1,17 @@
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/Editor specific files
+.idea/
+.vscode/
+
+# Ignore Composer's generated files
+/vendor/
+composer.lock
+
+# Ignore PHPStorm metadata
+.phpstorm.meta.php
+
+# Ignore PHP Unit test cache
+.phpunit.result.cache
