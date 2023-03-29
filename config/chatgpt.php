@@ -43,4 +43,10 @@ return [
         'stop' => null,
         'temperature' => 1,
     ],
+
+    'rate_limiting' => [
+        'enabled' => env('CHATGPT_RATE_LIMITING_ENABLED', false),
+        'requests' => env('CHATGPT_RATE_LIMIT_REQUESTS', 60),
+        'duration' => env('CHATGPT_RATE_LIMIT_DURATION', 60),
+    ],
 ];

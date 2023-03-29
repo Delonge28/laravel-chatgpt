@@ -2,6 +2,7 @@
 
 namespace Delonge28\LaravelChatGPT;
 
+use Delonge28\LaravelChatGPT\Middleware\RateLimitMiddleware;
 use Illuminate\Support\ServiceProvider;
 
 class ChatGPTServiceProvider extends ServiceProvider
@@ -11,6 +12,9 @@ class ChatGPTServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/chatgpt.php' => config_path('chatgpt.php'),
         ], 'config');
+
+        $this->app['router']->aliasMiddleware('laravel-chatgpt.rate_limit', RateLimitMiddleware::class);
+
     }
 
     public function register()

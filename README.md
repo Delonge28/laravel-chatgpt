@@ -59,6 +59,14 @@ $options = [
 
 $response = ChatGPT::sendMessage('Your message here', $options);
 ```
+## Rate Limiting
+Laravel ChatGPT package supports rate limiting to help you stay within the ChatGPT API's rate limits. To enable and configure rate limiting, update the following values in your `.env` file:
+
+```env
+CHATGPT_RATE_LIMITING_ENABLED=true
+CHATGPT_RATE_LIMIT_REQUESTS=60
+CHATGPT_RATE_LIMIT_DURATION=60
+```
 
 ## Testing
 To run the package's tests, execute the following command in your terminal:
