@@ -52,8 +52,8 @@ class ChatGPTClient
         try {
             $response = $this->client->get('engines');
             return json_decode($response->getBody(), true);
-        } catch (\Exception $e) {
-            return ['error' => $e->getMessage()];
+        } catch (GuzzleException $exception) {
+            return ['error' => $exception->getMessage()];
         }
     }
 
@@ -62,8 +62,8 @@ class ChatGPTClient
         try {
             $response = $this->client->get("engines/{$engine_id}");
             return json_decode($response->getBody(), true);
-        } catch (\Exception $e) {
-            return ['error' => $e->getMessage()];
+        } catch (GuzzleException $exception) {
+            return ['error' => $exception->getMessage()];
         }
     }
 }
