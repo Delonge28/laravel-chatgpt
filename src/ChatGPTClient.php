@@ -40,10 +40,13 @@ class ChatGPTClient
             ]);
 
             $responseData = json_decode((string)$response->getBody(), true);
+            if (isset($responseData['choices'][0]['text'])) {
+                return $responseData['choices'][0]['text'];
+            } else {
+                return ['error' => 'Response data does not contain expected format.'];
+            }
 
 
-
-            return $responseData?? '';
         } catch (GuzzleException $exception) {
             return ['error' => $exception->getMessage()];
         }
@@ -53,7 +56,7 @@ class ChatGPTClient
     {
         try {
             $response = $this->client->get('/models');
-            dd((string) $response->getBody());
+
             $responseData = json_decode((string)$response->getBody(), true);
 
             return $responseData;
