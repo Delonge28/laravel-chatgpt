@@ -46,4 +46,24 @@ class ChatGPTClient
             return ['error' => $exception->getMessage()];
         }
     }
+
+    public function listEngines()
+    {
+        try {
+            $response = $this->client->get('engines');
+            return json_decode($response->getBody(), true);
+        } catch (\Exception $e) {
+            return ['error' => $e->getMessage()];
+        }
+    }
+
+    public function getEngine(string $engine_id)
+    {
+        try {
+            $response = $this->client->get("engines/{$engine_id}");
+            return json_decode($response->getBody(), true);
+        } catch (\Exception $e) {
+            return ['error' => $e->getMessage()];
+        }
+    }
 }

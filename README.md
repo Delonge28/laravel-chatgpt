@@ -68,6 +68,27 @@ CHATGPT_RATE_LIMIT_REQUESTS=60
 CHATGPT_RATE_LIMIT_DURATION=60
 ```
 
+## Additional ChatGPT API Features
+
+The Laravel ChatGPT package also provides methods to interact with other ChatGPT API endpoints:
+
+### List Engines
+
+To fetch the list of available engines, use the `listEngines` method:
+
+```php
+use Delonge\LaravelChatGPT\Facades\ChatGPT;
+
+// List engines
+$engines = ChatGPT::listEngines();
+
+// Get engine details
+$engine = ChatGPT::getEngine('davinci-codex');
+```
+
+
+
+
 ## Testing
 To run the package's tests, execute the following command in your terminal:
 ``` bash
