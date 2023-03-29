@@ -24,7 +24,7 @@ class ChatGPTClient
         ]);
     }
 
-    public function sendMessage(string $prompt, array $options = []): array
+    public function sendMessage(string $prompt, array $options = [])
     {
         $payload = array_merge([
             'prompt' => $prompt,
