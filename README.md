@@ -24,7 +24,7 @@ composer require delonge/laravel-chatgpt
 2. Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --tag=config --provider="Delonge\LaravelChatGPT\ChatGPTServiceProvider"
+php artisan vendor:publish --tag=config --provider="Delonge28\LaravelChatGPT\ChatGPTServiceProvider"
 ```
 This command will publish the chatgpt.php configuration file to your config directory.
 
